@@ -18,3 +18,7 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+Route.group("admin", function() {
+  Route.get("/login", "Admin/UsersController.login")
+}).prefix("admin")
