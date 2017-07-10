@@ -67,7 +67,7 @@ h1 {
   text-align: center;
   color: #ffffff;
   font-weight: 300;
-  margin: 0 0 40px;
+  margin: 0 0;
 }
 
 label {
@@ -171,4 +171,9 @@ textarea {
 .forgot {
   margin-top: -20px;
   text-align: right;
+}
+
+#login .login-message {
+  padding: 14px 0;
+  color: #F00;
 }

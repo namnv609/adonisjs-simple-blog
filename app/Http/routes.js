@@ -19,6 +19,12 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-Route.group("admin", function() {
-  Route.get("/login", "Admin/UsersController.login")
+Route.group("adminLogin", function() {
+  Route.get("/login", "Admin/UsersController.getLogin")
+  Route.post("/login", "Admin/UsersController.postLogin")
 }).prefix("admin")
+
+Route.group("admin", function() {
+  Route.get("/", "Admin/DashboardsController.index")
+  Route.get("/logout", "Admin/UsersController.logout").as("adminLogout")
+}).prefix("admin").middleware("admin")
