@@ -1,3 +1,5 @@
+"use strict"
+
 class UsersController {
   * getLogin(request, response) {
     yield response.sendView("admins/users/login")

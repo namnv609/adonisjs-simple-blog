@@ -26,5 +26,10 @@ Route.group("adminLogin", function() {
 
 Route.group("admin", function() {
   Route.get("/", "Admin/DashboardsController.index")
-  Route.get("/logout", "Admin/UsersController.logout").as("adminLogout")
+  Route.get("/logout", "Admin/UsersController.logout")
+
+  Route.get("/categories", "Admin/CategoriesController.index")
+  Route.get("/category/:id", "Admin/CategoriesController.getEdit")
+  Route.get("/categories/new", "Admin/CategoriesController.getCreate")
+  Route.post("/categories/new", "Admin/CategoriesController.postCreate")
 }).prefix("admin").middleware("admin")
